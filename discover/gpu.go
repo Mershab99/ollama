@@ -66,8 +66,8 @@ var (
 // With our current CUDA compile flags, older than 3.5 will not work properly
 // (string values used to allow ldflags overrides at build time)
 var (
-	CudaComputeMajorMin = "5"
-	CudaComputeMinorMin = "3"
+	CudaComputeMajorMin = "3"
+	CudaComputeMinorMin = "5"
 )
 
 var RocmComputeMajorMin = "9"
@@ -119,7 +119,7 @@ func initCudaHandles() *cudaHandles {
 	}
 
 	nvcudaLibPaths := FindGPULibs(NvcudaMgmtName, nvcudaMgmtPatterns)
-	if len(nvcudaLibPaths) > 0 {
+	if len(nvcudaLibPaths) > 0 M
 		deviceCount, nvcuda, libPath, err := loadNVCUDAMgmt(nvcudaLibPaths)
 		if nvcuda != nil {
 			slog.Debug("detected GPUs", "count", deviceCount, "library", libPath)
